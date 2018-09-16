@@ -30,7 +30,7 @@ var requestHandler = function(request, response) {
 //listingsData and creates the server using requestHandler as the 'function'/var
 fs.readFile('listings.json', 'utf8', function(err, data) {
   if (err) {
-    throw error;
+    throw err;
   }
   listingData = JSON.parse(data);
   //create server
