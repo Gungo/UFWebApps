@@ -1,5 +1,6 @@
 # Assignment 3: Persisting data using MongoDB and Mongoose
 
+
 Our application at this point has a couple of issues: 
 - our front-end Angular application does not communicate with the server we built in assignment 1
 - each time the server starts, we reload the data from the same JSON file. 
