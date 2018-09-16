@@ -4,16 +4,16 @@ var User = require('./app/models/user.js');
 // create a new user
 var newUser = User({
   name: 'Peter Parker',
-  username: 'spideydude55',
+  username: 'spideydude26',
   password: 'passw0rd',
   admin: true
 });
-
+//adds each time, has problem if there are duplicate users
 
 // create user called gustavo
 var gustavo = new User( {
   name: 'Gustavo',
-  username: 'gusgus69',
+  username: 'gusgu68',
   password: 'passw0rd'
 });
 
@@ -24,7 +24,7 @@ gustavo.ledudify(function(err, name) {
   console.log('Your new name is '+name);
 });
 
-// call built-in to save intp database
+// call built-in to save into database
 gustavo.save(function(err) {
   if (err) throw err;
   console.log('User saved successfully.');

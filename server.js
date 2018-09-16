@@ -1,6 +1,7 @@
 var http = require('http'),
   fs = require('fs'),
   url = require('url'),
+  // has to match mongodb server to connect
   port = 27017;
 
 /* Global variables */

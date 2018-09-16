@@ -15,7 +15,6 @@ mongoose.connect('mongodb://localhost', {
 
 var Schema = mongoose.Schema;
 
-
 // defining Model
 /*
   models are constructors that represent documents within our db -
