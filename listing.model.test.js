@@ -1,37 +1,43 @@
-var should = require('should'), 
-    mongoose = require('mongoose'), 
-    Listing = require('./ListingSchema'), 
+var should = require('should'),
+    mongoose = require('mongoose'),
+    Listing = require('./ListingSchema'),
     config = require('./config');
 
 var listing, id;
 
+// added bluebird to package.json, solves deprecated mongoose promise
+mongoose.Promise = require('bluebird');
+
 listing =  {
-  code: "LBWEST", 
-  name: "Library West", 
+  code: "LBWEST",
+  name: "Library West",
   coordinates: {
-    latitude: 29.6508246, 
+    latitude: 29.6508246,
     longitude: -82.3417565
-  }, 
+  },
   address: "1545 W University Ave, Gainesville, FL 32603, United States"
 }
 
 describe('Listing Schema Unit Tests', function() {
 
+  // added useMongoClient: true to avoid deprecated message
   before(function(done) {
-    mongoose.connect(config.db.uri);
+    mongoose.connect(config.db.uri, {
+      useMongoClient: true
+    });
     done();
   });
 
   describe('Saving to database', function() {
     /*
-      Mocha's default timeout for tests is 2000ms. To ensure that the tests do not fail 
+      Mocha's default timeout for tests is 2000ms. To ensure that the tests do not fail
       prematurely, we can increase the timeout setting with the method this.timeout()
      */
     this.timeout(10000);
 
     it('saves properly when code and name provided', function(done){
       new Listing({
-        name: listing.name, 
+        name: listing.name,
         code: listing.code
       }).save(function(err, listing){
         should.not.exist(err);

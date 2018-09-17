@@ -4,7 +4,7 @@ var User = require('./app/models/user.js');
 // create a new user
 var newUser = User({
   name: 'Peter Parker',
-  username: 'spideydude26',
+  username: 'test',
   password: 'passw0rd',
   admin: true
 });
@@ -13,7 +13,7 @@ var newUser = User({
 // create user called gustavo
 var gustavo = new User( {
   name: 'Gustavo',
-  username: 'gusgu68',
+  username: 'test2',
   password: 'passw0rd'
 });
 

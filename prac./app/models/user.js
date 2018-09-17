@@ -6,7 +6,7 @@ User Model
 
 // now that we have the package, we just have to grab it in our project:
 var mongoose = require('mongoose');
-// Just add bluebird to your package.json, and then the following line should work
+// add bluebird to your package.json, solves deprecatd mongoose promise
 mongoose.Promise = require('bluebird');
 // connect to database
 mongoose.connect('mongodb://localhost', {
@@ -24,16 +24,8 @@ var Schema = mongoose.Schema;
 */
 var userSchema = new Schema({
   name: String,
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true,
-    select: false // so it doesn't return password when returned
-  },
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true, select: false }, // so it doesn't return password when returned
   admin: Boolean,
   location: String,
   meta: {
