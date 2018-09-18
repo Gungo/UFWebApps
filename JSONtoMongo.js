@@ -15,7 +15,7 @@ var fs = require('fs'),
 mongoose.Promise = require('bluebird');
 // connect to your database
 mongoose.connect(uri, {
-  useMongoClient: true
+  useNewUrlParser: true
 });
 
 // go through json file and save each listing to database

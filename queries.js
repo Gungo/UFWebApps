@@ -11,7 +11,7 @@ var Listing = require('./ListingSchema.js'),
 mongoose.Promise = require('bluebird');
 // connect to your database
 mongoose.connect(uri, {
-  useMongoClient: true
+  useNewUrlParser: true
 });
 
 var findLibraryWest = function() {
@@ -28,7 +28,7 @@ var findLibraryWest = function() {
 var removeCable = function() {
   // Find the document with the code 'CABL'.
   // remove this listing from your database and log the document to the console.
-  Listing.findOneAndRemove( { code: 'CABL' }, function(err, listing) {
+  Listing.findOneAndDelete( { code: 'CABL' }, function(err, listing) {
     if (err) throw err;
 
     console.log('Removing Document:\n' + listing);
@@ -58,4 +58,4 @@ var retrieveAllListings = function() {
 findLibraryWest();
 removeCable();
 updatePhelpsLab();
-retrieveAllListings();
+//retrieveAllListings();
