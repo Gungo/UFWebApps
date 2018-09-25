@@ -13,6 +13,8 @@ h2 {
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
+  border-radius: 5px;
+  border: 2px ridge #eee;
 }
 
 input[type=text], select {
@@ -46,6 +48,29 @@ div {
     padding: 5px;
 }
 
+/* for all buttons in milligram stylesheet- default, outline, clear */
+button.button{
+    margin: 10px;
+}
+
 .milligram {
   color: #9b4dca;
+}
+
+#hor-minimalist-a th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color: #039;
+	padding: 10px 8px;
+	border-bottom: 2px solid #6678b1;
+}
+#hor-minimalist-a td
+{
+	color: #669;
+	padding: 9px 8px 0px 8px;
+}
+#hor-minimalist-a tbody tr:hover td
+{
+	color: #009;
 }
