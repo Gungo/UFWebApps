@@ -3,7 +3,7 @@ var Listing = require('./ListingSchema.js'),
   mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   Listing = require('./ListingSchema.js'),
-  config = require('./config'),
+  config = require('./config/config.js'),
   uri = config.db.uri,
   listingData;
 
