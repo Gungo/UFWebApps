@@ -15,6 +15,7 @@ h2 {
   overflow: auto;
   border-radius: 5px;
   border: 2px ridge #eee;
+  transition: all 5s linear;
 }
 
 input[type=text], select {
@@ -51,6 +52,10 @@ div {
 /* for all buttons in milligram stylesheet- default, outline, clear */
 button.button{
     margin: 10px;
+}
+
+jumbotron {
+  transition: all .5s linear;
 }
 
 .milligram {
