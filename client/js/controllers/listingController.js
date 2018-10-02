@@ -1,8 +1,5 @@
 angular.module('listings').controller('ListingsController', ['$scope', 'Listings',
   function($scope, Listings) {
-    var cors = require('cors');
-    app.use(cors());
-
     /* Get all the listings, then bind it to the scope */
     Listings.getAll().then(function(response) {
       $scope.listings = response.data;
