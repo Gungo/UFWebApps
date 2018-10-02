@@ -1,7 +1,6 @@
 angular.module('listings', []).factory('Listings', function($http) {
 
-  var cors = require('cors'), methods = {
-    app.use(cors()),
+  var methods = {
 
     getAll: function() {
       return $http.get('https://gungo-uf-web-app.herokuapp.com/api/listings');
