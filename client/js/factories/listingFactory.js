@@ -11,7 +11,7 @@ angular.module('listings', []).factory('Listings', function($http) {
 
     delete: function(id) {
       // return result of HTTP delete method
-      return $http.delete('https://gungo-uf-web-app.herokuapp.com/api/listings' + id);
+      return $http.delete('https://gungo-uf-web-app.herokuapp.com/api/listings', id);
     }
 
   };
