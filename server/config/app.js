@@ -1,6 +1,6 @@
-var config = require('./config.js'),
-    mongoose = require('mongoose'),
-    express = require('./express');
+//var config = require('./config'),
+var mongoose = require('mongoose'),
+  express = require('./express');
 
 module.exports.start = function() {
   var app = express.init();
