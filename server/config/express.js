@@ -4,7 +4,8 @@ var path = require('path'),
   morgan = require('morgan'),
   bodyParser = require('body-parser'),
   config = require('./config'),
-  listingsRouter = require('../routes/listings.server.routes');
+  listingsRouter = require('../routes/listings.server.routes'),
+  cors = require('cors');
 
 module.exports.init = function() {
   // connect to database
@@ -21,13 +22,16 @@ module.exports.init = function() {
   // body parsing middleware
   app.use(bodyParser.json());
 
+  // cors
+  app.use(cors());
+
   // Serve static files
   app.use('/', express.static(__dirname + '/../../client'));
   app.use('/public', express.static(__dirname + '/../../public'));
 
   // Use the listings router for requests to the api */
   app.use('/api/listings', listingsRouter);
-  
+
   // go to homepage for all routes not specified */
   app.all('/*', function(req, res) {
     res.redirect('/');
