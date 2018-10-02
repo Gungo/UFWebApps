@@ -1,7 +1,7 @@
 angular.module('listings', []).factory('Listings', function($http) {
 
   var methods = {
-    var cors = require('cors');
+    var cors = require('cors'),
     app.use(cors()),
 
     getAll: function() {
